@@ -1,7 +1,9 @@
+import 'package:blogclub/Article.dart';
 import 'package:blogclub/carousel/carousel_slider.dart';
 import 'package:blogclub/data.dart';
 import 'package:blogclub/gen/assets.gen.dart';
 import 'package:blogclub/home.dart';
+import 'package:blogclub/profile.dart';
 import 'package:blogclub/splash.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,13 +32,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          colorScheme: ColorScheme.light(
+          snackBarTheme: const SnackBarThemeData(
+            backgroundColor: primaryColor,
+          ),
+          colorScheme: const ColorScheme.light(
             primary: primaryColor,
             background: Color(0xffFBFCFF),
             onBackground: primaryTextColor,
             onPrimary: Colors.white,
             surface: Colors.white,
             onSurface: primaryTextColor,
+          ),
+          appBarTheme: const AppBarTheme(
+            titleSpacing: 32,
+            backgroundColor: Colors.white,
+            foregroundColor: primaryTextColor,
           ),
           textButtonTheme: TextButtonThemeData(
               style: ButtonStyle(
@@ -87,7 +97,7 @@ class MyApp extends StatelessWidget {
       //     Positioned(bottom: 0, left: 0, right: 0, child: _BottonNavigation())
       //   ],
       // ),
-      home: const SplashScreen(),
+      home: const ProfileScreen(),
     );
   }
 }
